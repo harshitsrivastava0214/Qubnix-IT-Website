@@ -8,7 +8,7 @@ import axios from 'axios';
 const ServiceDetail = () => {
   const { serviceKey, serviceId } = useParams();
   const navigate = useNavigate();
-  const [setService] = useState(null);
+  const [service, setService] = useState(null);
   const [subService, setSubService] = useState(null);
   const [loading, setLoading] = useState(true);
 
