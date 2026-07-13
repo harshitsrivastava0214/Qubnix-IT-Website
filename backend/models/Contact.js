@@ -1,45 +1,59 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/database");
 
-const contactSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true
+const Contact = sequelize.define(
+  "Contact",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    company: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    service: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    budget: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    timeline: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    message: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
   },
-  email: {
-    type: String,
-    required: true,
-    lowercase: true,
-    match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']
-  },
-  phone: {
-    type: String,
-    required: true
-  },
-  company: {
-    type: String,
-    trim: true
-  },
-  service: {
-    type: String,
-    enum: [
-      'Collaborative Applications',
-      'Security & Audit',
-      'Development & AI',
-      'IT Helpdesk',
-      'Other'
-    ]
-  },
-  message: {
-    type: String,
-    required: true
-  },
-  budget: String,
-  timeline: String,
-  createdAt: {
-    type: Date,
-    default: Date.now
+  {
+    tableName: "contacts",
+    timestamps: true,
   }
-});
+);
 
-module.exports = mongoose.model('Contact', contactSchema);
+module.exports = Contact;

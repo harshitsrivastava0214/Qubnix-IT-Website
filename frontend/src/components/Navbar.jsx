@@ -27,7 +27,7 @@ const Navbar = () => {
               <button className="hover:text-primary transition flex items-center">
                 Services <span className="ml-1">▼</span>
               </button>
-              <div className="absolute left-0 mt-2 w-64 bg-dark border border-primary rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+              <div className="absolute left-0 top-full w-64 bg-dark border border-primary rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 z-50">
                 <Link 
                   to="/services/collaborative-applications" 
                   className="block px-4 py-3 hover:bg-primary hover:bg-opacity-20 border-b"

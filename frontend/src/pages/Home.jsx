@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaShield, FaRobot, FaHeadset, FaCloud, FaCheck } from 'react-icons/fa';
+import { FaArrowRight, FaShieldAlt, FaRobot, FaHeadset, FaCloud, FaCheck } from 'react-icons/fa';
 
 const Home = () => {
   const fadeIn = {
@@ -19,7 +19,7 @@ const Home = () => {
       color: "from-blue-500"
     },
     {
-      icon: <FaShield className="text-4xl text-secondary" />,
+      icon: <FaShieldAlt  className="text-4xl text-secondary" />,
       title: "Security & Audit",
       description: "ISO compliance, data security audits, and regulatory compliance",
       link: "/services/security-audit",

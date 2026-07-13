@@ -6,15 +6,17 @@ import Home from './pages/Home';
 import CollaborativeApplications from './pages/services/CollaborativeApplications';
 import SecurityAudit from './pages/services/SecurityAudit';
 import DevelopmentAI from './pages/services/DevelopmentAI';
-import ITHelpdesk from './pages/ITHelpdesk';
+import ITHelpdesk from './pages/services/ITHelpdesk';
 import ServiceDetail from './pages/ServiceDetail';
 import ContactPage from './pages/ContactPage';
 import NotFound from './pages/NotFound';
 import { Toaster } from 'react-hot-toast';
+import ScrollToTop from './components/scroll_to_top';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-white">
         <Navbar />
         <main className="flex-grow">
