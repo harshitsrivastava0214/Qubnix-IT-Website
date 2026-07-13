@@ -12,8 +12,6 @@ import ContactPage from './pages/ContactPage';
 import NotFound from './pages/NotFound';
 import { Toaster } from 'react-hot-toast';
 import ScrollToTop from './components/scroll_to_top';
-import PrivacyPolicy from "./pages/privacyPolicy";
-import TermsOfService from './pages/termsOfService';
 
 function App() {
   return (
@@ -28,8 +26,6 @@ function App() {
             <Route path="/services/security-audit" element={<SecurityAudit />} />
             <Route path="/services/development-ai" element={<DevelopmentAI />} />
             <Route path="/services/:serviceKey/:serviceId" element={<ServiceDetail />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/it-helpdesk" element={<ITHelpdesk />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFound />} />
