@@ -1,0 +1,31 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+.glass-effect {
+  @apply backdrop-blur-md bg-white bg-opacity-10 border border-white border-opacity-20;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.hover-lift {
+  @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+}
