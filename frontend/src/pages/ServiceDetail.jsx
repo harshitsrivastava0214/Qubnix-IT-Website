@@ -8,7 +8,7 @@ import axios from 'axios';
 const ServiceDetail = () => {
   const { serviceKey, serviceId } = useParams();
   const navigate = useNavigate();
-  const [setService] = useState(null);
+  const [service, setService] = useState(null);
   const [subService, setSubService] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -29,7 +29,7 @@ const ServiceDetail = () => {
     };
 
     fetchService();
-  }, [serviceKey, serviceId]);
+  }, [serviceKey, serviceId, setService]);
 
   const fadeIn = {
     initial: { opacity: 0, y: 20 },

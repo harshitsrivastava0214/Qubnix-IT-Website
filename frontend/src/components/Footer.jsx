@@ -68,9 +68,9 @@ const Footer = () => {
             &copy; 2024 Qubnix IT Solutions. All rights reserved.
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-primary transition text-xl"><FaLinkedin /></a>
+            {/*<a href="#" className="text-gray-400 hover:text-primary transition text-xl"><FaLinkedin /></a>
             <a href="#" className="text-gray-400 hover:text-primary transition text-xl"><FaTwitter /></a>
-            <a href="#" className="text-gray-400 hover:text-primary transition text-xl"><FaFacebook /></a>
+            <a href="#" className="text-gray-400 hover:text-primary transition text-xl"><FaFacebook /></a>*/}
           </div>
         </div>
       </div>
