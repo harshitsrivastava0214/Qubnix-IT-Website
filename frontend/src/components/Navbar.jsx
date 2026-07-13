@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'react-icons/fa';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
