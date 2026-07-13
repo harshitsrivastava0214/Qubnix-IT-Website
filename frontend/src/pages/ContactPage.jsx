@@ -348,5 +348,5 @@ const ContactPage = () => {
     </div>
   );
 };
-
+//end of ContactPage component
 export default ContactPage;
