@@ -1,27 +1,23 @@
-const nodemailer = require('nodemailer');
-const Contact = require('../models/Contact');
-const config = require('../config');
+const config = require("../config/env")
+const nodemailer = require('nodemailer')
 
 // Reusable transporter object
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: config.email.user,
-    pass: config.email.pass,
+    user: config.ADMIN_EMAIL,
+    pass: config.EMAIL_PASSWORD,
   },
 });
 
-async function handleNewInquiry(contactData) {
-  // 1. Save contact to the database
-  const contact = new Contact(contactData);
-  await contact.save(); // Mongoose validation is triggered here
+async function sendInquiryEmails(contactData) {
 
-  const { name, email, phone, company, service, message, budget, timeline } = contact;
+  const { name, email, phone, company, service, message, budget, timeline } = contactData;
 
   // 2. Define email options
   const adminMailOptions = {
-    from: config.email.user,
-    to: config.email.admin,
+    from: config.ADMIN_EMAIL,
+    to: config.ADMIN_EMAIL,
     subject: `New Service Inquiry from ${name}`,
     html: `
       <h2>New Contact Form Submission</h2>
@@ -38,7 +34,7 @@ async function handleNewInquiry(contactData) {
   };
 
   const userMailOptions = {
-    from: config.email.user,
+    from: config.ADMIN_EMAIL,
     to: email,
     subject: 'We received your inquiry - Qubnix IT Solutions',
     html: `
@@ -62,4 +58,4 @@ async function handleNewInquiry(contactData) {
   };
 }
 
-module.exports = { handleNewInquiry };
+module.exports = { sendInquiryEmails };

@@ -1,9 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const mongoose = require('mongoose');
-
 dotenv.config();
+const sequelize = require("./config/database");
 
 const app = express();
 
@@ -15,19 +14,19 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
-// Database Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/qubnix', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.log('MongoDB connection error:', err));
-
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("MySQL Connected");
+    return sequelize.sync();
+  })
+  .then(() => console.log("Database Synced"))
+  .catch((err) => console.error(err));
 // Routes
 app.use('/api/contact', require('./routes/contact'));
-app.use('/api/services', require('./routes/services'));
-app.use('/api/blog', require('./routes/blog'));
-app.use('/api/case-studies', require('./routes/caseStudies'));
+// app.use('/api/services', require('./routes/services'));
+// app.use('/api/blog', require('./routes/blog'));
+// app.use('/api/case-studies', require('./routes/caseStudies'));
 
 // Health Check
 app.get('/api/health', (req, res) => {
