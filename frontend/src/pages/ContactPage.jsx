@@ -339,7 +339,7 @@ const ContactPage = () => {
               <p className="text-blue-100">Client Satisfaction</p>
             </motion.div>
             <motion.div {...fadeIn} transition={{ ...fadeIn.transition, delay: 0.2 }}>
-              <h3 className="text-4xl font-bold mb-2">500+</h3>
+              <h3 className="text-4xl font-bold mb-2">10+</h3>
               <p className="text-blue-100">Happy Clients</p>
             </motion.div>
           </div>
@@ -348,5 +348,5 @@ const ContactPage = () => {
     </div>
   );
 };
-
+//end of contact page
 export default ContactPage;
