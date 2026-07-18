@@ -14,6 +14,7 @@ import { Toaster } from 'react-hot-toast';
 import ScrollToTop from './components/scroll_to_top';
 import PrivacyPolicy from "./pages/privacyPolicy";
 import TermsOfService from './pages/termsOfService';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         </main>
         <Footer />
         <Toaster position="top-right" />
+        <SpeedInsights />
       </div>
     </Router>
   );
