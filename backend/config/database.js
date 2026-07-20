@@ -1,5 +1,6 @@
 const { Sequelize } = require("sequelize");
 const config = require("./env")
+const pg = require("pg")
 
 
 const isProduction = config.ENV === "production";
@@ -7,6 +8,7 @@ const isProduction = config.ENV === "production";
 const sequelize = isProduction
   ? new Sequelize(config.DATABASE_URL, {
       dialect: "postgres",
+      dialectModule: pg,
       dialectOptions: {
         ssl: {
           require: true,
