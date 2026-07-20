@@ -38,29 +38,94 @@ async function sendInquiryEmails(contactData) {
     to: email,
     subject: 'We received your inquiry - Qubnix IT Solutions',
     html: `
-      Hello ${name},
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:40px 0;">
+    <tr>
+      <td align="center">
 
-        Thank you for contacting Qubnix IT Solutions.
+        <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);">
 
-        We have successfully received your inquiry.
+          <tr>
+            <td style="background:#0d6efd;padding:25px;text-align:center;color:white;">
+              <h1 style="margin:0;font-size:26px;">Qubnix IT Solutions</h1>
+              <p style="margin-top:8px;">Thank you for contacting us</p>
+            </td>
+          </tr>
 
-        One of our consultants will review your requirements and respond within one business day.
+          <tr>
+            <td style="padding:35px;color:#333;line-height:1.7;">
 
-        If your request is urgent, you may reply directly to this email.
+              <h2 style="margin-top:0;">
+                Hello ${name},
+              </h2>
 
-        Meanwhile you can explore our services:
+              <p>
+                Thank you for contacting <strong>Qubnix IT Solutions</strong>.
+              </p>
 
-        • Web Development
-        • AI Solutions
-        • Mobile Apps
-        • Cloud Services
+              <p>
+                We have successfully received your inquiry.
+              </p>
 
-        Website:
-        https://qubnixitsolutions.com
+              <p>
+                One of our consultants will review your requirements and
+                get back to you within <strong>1 business day</strong>.
+              </p>
 
-        Regards,
-        Qubnix IT Solutions
-    `,
+              <p>
+                If your request is urgent, simply reply to this email.
+              </p>
+
+              <hr style="border:none;border-top:1px solid #e5e5e5;margin:30px 0;">
+
+              <h3>Our Services</h3>
+
+              <ul style="padding-left:20px;">
+                <li>Web Development</li>
+                <li>AI Solutions</li>
+                <li>Mobile Application Development</li>
+                <li>Cloud Solutions</li>
+                <li>UI/UX Design</li>
+                <li>Digital Transformation</li>
+              </ul>
+
+              <p style="margin-top:30px;">
+                Visit our website:
+                <br>
+                <a href="https://qubnixitsolutions.com"
+                   style="color:#0d6efd;text-decoration:none;">
+                  https://qubnixitsolutions.com
+                </a>
+              </p>
+
+              <p>
+                Best Regards,<br>
+                <strong>Qubnix IT Solutions</strong><br>
+                📧 sales@qubnixitsolutions.com
+              </p>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td style="background:#f7f7f7;padding:20px;text-align:center;font-size:12px;color:#777;">
+              © 2026 Qubnix IT Solutions. All Rights Reserved.
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`,
   };
 
   // 3. Send emails concurrently
