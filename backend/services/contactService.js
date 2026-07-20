@@ -38,11 +38,28 @@ async function sendInquiryEmails(contactData) {
     to: email,
     subject: 'We received your inquiry - Qubnix IT Solutions',
     html: `
-      <h2>Thank you for reaching out to Qubnix IT Solutions!</h2>
-      <p>Hi ${name},</p>
-      <p>We have received your inquiry and will get back to you within 24 hours.</p>
-      <p>Our team is excited to discuss how we can help transform your business.</p>
-      <p>Best regards,<br>Qubnix IT Solutions Team</p>
+      Hello {{name}},
+
+        Thank you for contacting Qubnix IT Solutions.
+
+        We have successfully received your inquiry.
+
+        One of our consultants will review your requirements and respond within one business day.
+
+        If your request is urgent, you may reply directly to this email.
+
+        Meanwhile you can explore our services:
+
+        • Web Development
+        • AI Solutions
+        • Mobile Apps
+        • Cloud Services
+
+        Website:
+        https://qubnixitsolutions.com
+
+        Regards,
+        Qubnix IT Solutions
     `,
   };
 
