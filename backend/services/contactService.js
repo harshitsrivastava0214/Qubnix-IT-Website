@@ -38,7 +38,7 @@ async function sendInquiryEmails(contactData) {
     to: email,
     subject: 'We received your inquiry - Qubnix IT Solutions',
     html: `
-      Hello {{name}},
+      Hello ${name},
 
         Thank you for contacting Qubnix IT Solutions.
 
