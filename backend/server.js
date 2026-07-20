@@ -6,6 +6,11 @@ const sequelize = require("./config/database");
 
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  process.env.CLIENT_URL
+];
+
 // Middleware
 app.use(cors({
   origin: function (origin, callback) {
