@@ -4,6 +4,7 @@ import { FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/f
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
+
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -37,8 +38,9 @@ const ContactPage = () => {
     setLoading(true);
 
     try {
+      const BASE_URL = process.env.REACT_APP_API_URL
       const response = await axios.post(
-        'http://localhost:5000/api/contact/send',
+        `${BASE_URL}/api/contact/send`,
         formData,
         {
           headers: {
